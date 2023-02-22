@@ -23,16 +23,18 @@ export default function Home() {
         <title>Blogs</title>
       </Head>
       <h1>Blogs</h1>
-      <p>
-        <ul>
-          {
-            blogs.map(blog => {
-              return (
+      <ul>
+        {
+          blogs.map(blog => {
+            return (
+              <Link href={`/blogs/${blog._id}`}>
                 <li key={blog._id}> {blog.title}</li>
-              )
-            })
-          }
-        </ul>
+              </Link>
+            )
+          })
+        }
+      </ul>
+      <p>
       </p>
 
     </>
