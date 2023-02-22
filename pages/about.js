@@ -8,7 +8,7 @@ export default function about() {
         <title>About Page</title>
       </Head>
       <h1>About Page</h1>
-      <p>About Lynn</p>
+      <p>About Lynn Thit</p>
       <Link href="/">Home</Link>
     </>
   );
