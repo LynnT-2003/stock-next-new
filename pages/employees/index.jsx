@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import LInk from 'next/link'
+import Link from 'next/link'
 
 export default function Home(props) {
     const {employees} = props;
@@ -17,9 +17,9 @@ export default function Home(props) {
 return (
   <>
     <Head>
-      <title>Employees</title>
+      <title>employee</title>
     </Head>
-    <h1>Employees</h1>
+    <h1>employee</h1>
     <div>
       <ul>
         {list}
@@ -30,9 +30,10 @@ return (
 }
 
 export async function getServerSideProps() {
-  // employees.json is in /public
+  // employee.json is in /public
   console.debug(`Fetching ${process.env.APIURL}employees`)
   const ret = await fetch(`${process.env.APIURL}employees`)
+  console.log(ret)
   const employee = await ret.json()
   console.log({ employee })
   return {
