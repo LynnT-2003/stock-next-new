@@ -14,10 +14,10 @@ export default function Stock({ stock }) {
   return (
     <>
       <Head>
-        <title>{stock.title}</title>
+        <title>{stock.code}</title>
       </Head>
-      <h1>{stock.title}</h1>
-      <p>{stock.content}</p>
+      <h1>{stock.name}</h1>
+      <p>{stock.price}</p>
       <Link href="/stocks">Back</Link>
     </>
   )
