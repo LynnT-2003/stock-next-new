@@ -1,18 +1,16 @@
-import Head from 'next/head'
-import Link from 'next/link'
+import Head from "next/head";
+import Link from "next/link";
 
 export default function Home(props) {
   const { products } = props;
 
-  if (!products) return (<div>Loading...</div>)
+  if (!products) return <div>Loading...</div>;
 
   const list = products.map((product) => (
     <li key={product.id}>
-      <Link href={`/product/${product.id}`}>
-        {product.title}
-      </Link>
+      <Link href={`/product/${product.id}`}>{product.title}</Link>
     </li>
-  ))
+  ));
 
   return (
     <>
@@ -21,23 +19,21 @@ export default function Home(props) {
       </Head>
       <h1>Products</h1>
       <div>
-        <ul>
-          {list}
-        </ul>
+        <ul>{list}</ul>
       </div>
     </>
-  )
+  );
 }
 
 export async function getServerSideProps() {
   // products.json is in /public
-  console.debug(`Fetching ${process.env.APIURL}product`)
-  const ret = await fetch(`${process.env.APIURL}product`)
-  const products = await ret.json()
-  console.log({ products })
+  console.debug(`Fetching ${process.env.APIURL}product`);
+  const ret = await fetch(`${process.env.APIURL}product`);
+  const products = await ret.json();
+  console.log({ products });
   return {
     props: {
-      products
-    }
-  }
+      products,
+    },
+  };
 }
