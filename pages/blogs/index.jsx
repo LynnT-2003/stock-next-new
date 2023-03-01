@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function Home({ blogs }) {
   function deleteBlog(id) {
-    fetch(`https://stock-next-new.vercel.app/api/blogs/articles/${id}`, {
+    fetch(`/api/blogs/articles/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
